@@ -5,21 +5,22 @@ import (
 	"fmt"
 
 	"github.com/filecoin-project/go-address"
-	"github.com/filecoin-project/go-state-types/crypto"
 
 	blst "github.com/supranational/blst/bindings/go"
-
-	"github.com/cyvadra/filecoin-client/sigs"
 )
 
 const DST = string("BLS_SIG_BLS12381G2_XMD:SHA-256_SSWU_RO_NUL_")
 
-type SecretKey = blst.SecretKey
-type PublicKey = blst.P1Affine
-type Signature = blst.P2Affine
-type AggregateSignature = blst.P2Aggregate
+type (
+	SecretKey          = blst.SecretKey
+	PublicKey          = blst.P1Affine
+	Signature          = blst.P2Affine
+	AggregateSignature = blst.P2Aggregate
+)
 
 type blsSigner struct{}
+
+var BS blsSigner
 
 func (blsSigner) GenPrivate() ([]byte, error) {
 	// Generate 32 bytes of randomness
@@ -50,12 +51,14 @@ func (blsSigner) Sign(p []byte, msg []byte) ([]byte, error) {
 }
 
 func (blsSigner) Verify(sig []byte, a address.Address, msg []byte) error {
-	if !new(Signature).VerifyCompressed(sig, a.Payload()[:], msg, []byte(DST)) {
+	// Added sigGroupcheck==false, pkValidate==true, Nov 7th, 2021
+	x := new(Signature).VerifyCompressed(sig, false, a.Payload()[:], true, msg, []byte(DST))
+	if !x {
 		return fmt.Errorf("bls signature failed to verify")
 	}
 	return nil
 }
 
 func init() {
-	sigs.RegisterSignature(crypto.SigTypeBLS, blsSigner{})
+	BS = blsSigner{}
 }
