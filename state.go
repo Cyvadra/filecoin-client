@@ -2,9 +2,9 @@ package filecoin
 
 import (
 	"context"
+	"github.com/cyvadra/filecoin-client/types"
 	"github.com/filecoin-project/go-address"
 	"github.com/ipfs/go-cid"
-	"github.com/myxtype/filecoin-client/types"
 )
 
 // StateGetActor returns the indicated actor's nonce and balance.

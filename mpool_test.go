@@ -2,9 +2,9 @@ package filecoin
 
 import (
 	"context"
+	"github.com/cyvadra/filecoin-client/types"
 	"github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/abi"
-	"github.com/myxtype/filecoin-client/types"
 	"github.com/shopspring/decimal"
 	"testing"
 )

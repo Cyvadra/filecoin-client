@@ -1,4 +1,4 @@
-module github.com/myxtype/filecoin-client
+module github.com/cyvadra/filecoin-client
 
 go 1.15
 

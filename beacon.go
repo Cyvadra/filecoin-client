@@ -2,7 +2,7 @@ package filecoin
 
 import (
 	"context"
-	"github.com/myxtype/filecoin-client/types"
+	"github.com/cyvadra/filecoin-client/types"
 )
 
 // BeaconGetEntry returns the beacon entry for the given filecoin epoch. If the entry has not yet been produced, the call will block until the entry becomes available

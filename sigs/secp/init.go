@@ -2,11 +2,11 @@ package secp
 
 import (
 	"fmt"
+	"github.com/cyvadra/filecoin-client/pkg/secp256k1"
+	"github.com/cyvadra/filecoin-client/sigs"
 	"github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/crypto"
 	"github.com/minio/blake2b-simd"
-	"github.com/myxtype/filecoin-client/pkg/secp256k1"
-	"github.com/myxtype/filecoin-client/sigs"
 )
 
 type secpSigner struct{}

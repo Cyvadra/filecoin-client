@@ -2,8 +2,8 @@ package local
 
 import (
 	"encoding/hex"
+	"github.com/cyvadra/filecoin-client/types"
 	"github.com/filecoin-project/go-address"
-	"github.com/myxtype/filecoin-client/types"
 	"testing"
 )
 

@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
+	"github.com/cyvadra/filecoin-client"
+	"github.com/cyvadra/filecoin-client/types"
 	"github.com/ipfs/go-cid"
-	"github.com/myxtype/filecoin-client"
-	"github.com/myxtype/filecoin-client/types"
 )
 
 // 简单的充值逻辑
@@ -14,7 +14,7 @@ func main() {
 	job := &RechargeFilJob{}
 
 	// 处理区块652243
-	if err := job.mapHeight(client, 652243);err!=nil {
+	if err := job.mapHeight(client, 652243); err != nil {
 		panic(err)
 	}
 

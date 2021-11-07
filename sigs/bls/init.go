@@ -9,7 +9,7 @@ import (
 
 	blst "github.com/supranational/blst/bindings/go"
 
-	"github.com/myxtype/filecoin-client/sigs"
+	"github.com/cyvadra/filecoin-client/sigs"
 )
 
 const DST = string("BLS_SIG_BLS12381G2_XMD:SHA-256_SSWU_RO_NUL_")

@@ -2,12 +2,12 @@ package local
 
 import (
 	"fmt"
+	"github.com/cyvadra/filecoin-client/sigs"
+	"github.com/cyvadra/filecoin-client/types"
 	"github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/crypto"
-	"github.com/myxtype/filecoin-client/sigs"
-	"github.com/myxtype/filecoin-client/types"
-	// _ "github.com/myxtype/filecoin-client/sigs/bls"
-	_ "github.com/myxtype/filecoin-client/sigs/secp"
+	// _ "github.com/cyvadra/filecoin-client/sigs/bls"
+	_ "github.com/cyvadra/filecoin-client/sigs/secp"
 )
 
 // WalletNew creates a new address in the wallet with the given sigType.
