@@ -2,6 +2,7 @@ package sigs
 
 import (
 	"fmt"
+
 	"github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/crypto"
 )
@@ -56,6 +57,7 @@ func Generate(sigType crypto.SigType) ([]byte, error) {
 func ToPublic(sigType crypto.SigType, pk []byte) ([]byte, error) {
 	sv, ok := sigs[sigType]
 	if !ok {
+		fmt.Println("debug: ", sigs)
 		return nil, fmt.Errorf("cannot generate public key of unsupported type: %v", sigType)
 	}
 
