@@ -3,7 +3,6 @@ package sigs
 import (
 	"fmt"
 
-	"github.com/cyvadra/filecoin-client/sigs/bls"
 	"github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/crypto"
 )
@@ -84,5 +83,4 @@ func init() {
 	if sigs == nil {
 		sigs = make(map[crypto.SigType]SigShim)
 	}
-	sigs[crypto.SigTypeBLS] = bls.BS
 }
