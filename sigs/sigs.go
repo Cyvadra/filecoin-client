@@ -80,7 +80,7 @@ func RegisterSignature(typ crypto.SigType, vs SigShim) {
 }
 
 func init() {
-	if sigs == nil {
-		sigs = make(map[crypto.SigType]SigShim)
-	}
+	sigs = make(map[crypto.SigType]SigShim)
+	SecpInit()
+	BLSInit()
 }
