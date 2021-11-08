@@ -63,5 +63,5 @@ func (blsSigner) Verify(sig []byte, a address.Address, msg []byte) error {
 
 func init() {
 	// restore register logic
-	sigs.RegisterSignature(crypto.SigTypeBLS, &blsSigner{})
+	sigs.RegisterSignature(crypto.SigTypeBLS, blsSigner{})
 }
