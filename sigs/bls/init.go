@@ -4,7 +4,9 @@ import (
 	"crypto/rand"
 	"fmt"
 
+	"github.com/cyvadra/filecoin-client/sigs"
 	"github.com/filecoin-project/go-address"
+	"github.com/filecoin-project/go-state-types/crypto"
 
 	blst "github.com/supranational/blst/bindings/go"
 )
@@ -60,5 +62,6 @@ func (blsSigner) Verify(sig []byte, a address.Address, msg []byte) error {
 }
 
 func init() {
-	BS = blsSigner{}
+	// restore register logic
+	sigs.RegisterSignature(crypto.SigTypeBLS, &blsSigner{})
 }
